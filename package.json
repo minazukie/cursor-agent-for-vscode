@@ -1,0 +1,65 @@
+{
+  "name": "cursor-agent",
+  "displayName": "Cursor Agent for VSCode",
+  "description": "Cursor Agent integration for VSCode",
+  "version": "1.0.3",
+  "publisher": "minazukie",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "activationEvents": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/minazukie/cursor-agent-for-vscode"
+  },
+  "categories": [
+    "Other"
+  ],
+  "icon": "icons/cursor.png",
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "cursor-agent.run",
+        "title": "Open Cursor Agent",
+        "icon": {
+          "light": "icons/cursor.svg",
+          "dark": "icons/cursor_dark.svg"
+        }
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "cursor-agent.run",
+        "key": "cmd+g c",
+        "mac": "cmd+g c"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "cursor-agent.run",
+          "group": "navigation@99",
+          "when": "resourceScheme == 'file'",
+          "alt": "",
+          "icon": {
+            "light": "icons/cursor.svg",
+            "dark": "icons/cursor_dark.svg"
+          }
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p .",
+    "watch": "tsc -watch -p .",
+    "test": "echo \"No tests yet\"",
+    "package": "pnpm dlx @vscode/vsce package",
+    "deploy": "pnpm dlx vsce publish"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.6.0"
+  },
+  "packageManager": "pnpm@10.10.0+sha512.d615db246fe70f25dcfea6d8d73dee782ce23e2245e3c4f6f888249fb568149318637dca73c2c5c8ef2a4ca0d5657fb9567188bfab47f566d1ee6ce987815c39"
+}
