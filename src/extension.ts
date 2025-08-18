@@ -19,8 +19,10 @@ export function activate(context: vscode.ExtensionContext) {
     });
     
     activeTerminal = terminal;
-    terminal.show(true);
     terminal.sendText('cursor-agent');
+    terminal.show(true);
+
+    await vscode.commands.executeCommand('workbench.action.focusActiveEditorGroup');
   });
 
   // Clean up terminal reference when it's closed

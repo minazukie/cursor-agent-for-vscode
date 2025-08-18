@@ -2,7 +2,7 @@
   "name": "cursor-agent",
   "displayName": "Cursor Agent for VSCode",
   "description": "Cursor Agent integration for VSCode",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "publisher": "minazukie",
   "engines": {
     "vscode": "^1.85.0"
